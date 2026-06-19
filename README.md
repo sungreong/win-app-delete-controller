@@ -4,6 +4,19 @@ Windows App Delete Controller is a small Windows desktop tool for finding, revie
 
 It is built with Rust and egui, and reads the standard Windows Uninstall registry entries from HKLM and HKCU.
 
+![Windows App Delete Controller screenshot](docs/screenshots/main.png)
+
+## Why
+
+Windows can scatter uninstall entries across machine-wide, per-user, 32-bit, and hidden registry locations. Some entries are safe to launch directly, some need administrator permission, and some are marked as restricted by Windows or the publisher.
+
+This app gives you one review surface before launching uninstallers:
+
+- inspect app metadata before removal
+- filter noisy or restricted entries
+- verify whether a launched uninstaller actually removed the app from the Windows list
+- retry elevation-required uninstallers through UAC only when needed
+
 ## Features
 
 - Scan installed apps from Windows Uninstall registry keys.
@@ -16,6 +29,15 @@ It is built with Rust and egui, and reads the standard Windows Uninstall registr
 - Detect commands that need elevation and retry them through Windows UAC.
 - Re-scan after uninstall commands exit to verify whether the app disappeared from the Windows app list.
 - Save UI filters and display settings under `%APPDATA%\WinAppDeleteController\settings.ini`.
+
+## Typical Workflow
+
+1. Search or filter the app list.
+2. Review publisher, version, size, install date, and readiness status.
+3. Select one or more apps from the current page.
+4. Confirm the uninstall commands.
+5. Let Windows or the vendor uninstaller complete the removal.
+6. Check the job status to see whether the app disappeared from the Windows uninstall list.
 
 ## What It Does Not Do
 
