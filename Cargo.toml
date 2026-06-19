@@ -1,0 +1,20 @@
+[package]
+name = "win_app_delete_controller"
+version = "0.1.0"
+edition = "2024"
+description = "A Windows desktop tool for reviewing and launching registered app uninstall commands."
+repository = "https://github.com/sungreong/win-app-delete-controller"
+exclude = [
+    "/target/",
+    "/target-*/",
+    "/dist/",
+    "/WinAppDeleteControllerSetup*/",
+    "/*.zip",
+    "/*.exe",
+    "/*.pdb",
+    "/setup/*.exe",
+]
+
+[dependencies]
+eframe = { version = "0.34.3", default-features = false, features = ["default_fonts", "glow"] }
+winreg = "0.56.0"
