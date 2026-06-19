@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 description = "A Windows desktop tool for reviewing and launching registered app uninstall commands."
 repository = "https://github.com/sungreong/win-app-delete-controller"
+license = "MIT"
 exclude = [
     "/target/",
     "/target-*/",
